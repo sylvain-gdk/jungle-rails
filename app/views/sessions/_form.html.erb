@@ -1,10 +1,10 @@
-<%= form_for @user do |f| %>
+<%= form_for(:session, url: sessions_path) do |f| %>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@user.errors.count, "error") %> prohibited
-        this account from being created:
+        from loging in:
       </h2>
       <ul>
         <% @user.errors.full_messages.each do |msg| %>
@@ -13,16 +13,6 @@
       </ul>
     </div>
   <% end %>
-
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </p>
-
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </p>
 
   <p>
     <%= f.label :email %><br>
@@ -35,12 +25,7 @@
   </p>
 
   <p>
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </p>
-
-  <p>
-    <%= f.submit %>
+    <%= f.submit 'Login' %>
   </p>
 
 <% end %>

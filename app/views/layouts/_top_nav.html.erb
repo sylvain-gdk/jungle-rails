@@ -27,17 +27,25 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li>
+              <a href="/logout" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="text-danger"><%= fa_icon 'user', text: 'Logout' %></span>
+              </a>
+            </li>
+          <% else %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-            <span class="text-success"><%= fa_icon 'user', text: 'User' %></span>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%= link_to 'Register', new_user_path %></li>
-          </ul>
-        </li>
+                <span class="text-success"><%= fa_icon 'user', text: 'User' %></span>
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Signup', new_user_path %></li>
+                <li><%= link_to 'Login', new_session_path %></li>
+              </ul>
+            </li>
+          <% end %>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
