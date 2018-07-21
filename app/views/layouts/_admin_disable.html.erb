@@ -1,0 +1,10 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+
+  <span class="text-danger"><%= fa_icon 'lock', text: 'Admin' %></span>
+  <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+  <li class="disabled"><%= link_to 'Dashboard', [:admin, :root] %></li>
+  <li class="disabled"><%= link_to 'Products',  [:admin, :products] %></li>
+  <li class="disabled"><%= link_to 'Categories',  [:admin, :categories] %></li>
+</ul>

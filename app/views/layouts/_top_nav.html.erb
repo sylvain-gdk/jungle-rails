@@ -48,16 +48,12 @@
           <% end %>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-
-            <span class="text-danger"><%= fa_icon 'lock', text: 'Admin' %></span>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%= link_to 'Dashboard', [:admin, :root] %></li>
-            <li><%= link_to 'Products',  [:admin, :products] %></li>
-            <li><%= link_to 'Categories',  [:admin, :categories] %></li>
-          </ul>
+          <% admin = User.find_by_id(session[:user_id]) %>
+          <% if current_user && admin.email == ENV['ADMIN_USERNAME'] %>
+            <%= render 'layouts/admin_active' %>
+          <% else %>
+            <%= render 'layouts/admin_disable' %>
+          <% end %>
         </li>
         <li>
           <%= link_to cart_path do %>
