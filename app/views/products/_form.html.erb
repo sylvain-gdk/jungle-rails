@@ -1,6 +1,9 @@
 <%= form_for [@product, Review.new] do |f| %>
   <div class="form-group">
-    <%= f.label :rating %><br>
+    <%= f.label :rating %>
+    <% 5.times do %>
+      <%= fa_icon "star-o" %>
+    <% end %><br>
     <%= f.radio_button :rating, '1' %>
     <%= f.radio_button :rating, '2' %>
     <%= f.radio_button :rating, '3' %>

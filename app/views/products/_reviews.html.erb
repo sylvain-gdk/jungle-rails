@@ -5,14 +5,20 @@
       <% item.rating.times do %>
         <%= fa_icon "star" %>
       <% end %>
+      <% (5 - item.rating).times do %>
+        <%= fa_icon "star-o" %>
+      <% end %>
     </dd>
     <dt><%= user.first_name %></dt>
     <dd><%= item.description %></dd>
-    <dd><% if current_user == user %>
-      <button type="submit" class="btn btn-danger btn-sm rev-del-but">Delete</button>
-        <% end %>
+    <dd>
+      <% if current_user == user %>
+        <%= link_to 'Delete', "/products/#{item.product_id}/reviews/#{item.id}",
+                              method: :delete,
+                              data: { confirm: 'Are you sure?' },
+                              class: "btn btn-danger btn-sm rev-del-btn" %>
+      <% end %>
     </dd>
-
     <hr>
   </dl>
 <% end %>
