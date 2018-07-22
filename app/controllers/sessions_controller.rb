@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
     session[:referral_url] = request.referer
     @user = User.new

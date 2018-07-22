@@ -26,23 +26,14 @@
         </dl>
       </div>
     </div>
-
+    <hr>
+    <h3>Reviews</h3>
+    <%= render 'form' %>
     <div class="row">
-      <% @review_prod = Review.find_by_product_id(@product.id) %>
       <div class="col-sm-8">
-        <h3>Reviews</h3>
-        <dl class="dl-horizontal">
-          <dd>
-            <% @review_prod.rating.times do %>
-              <%= fa_icon "star" %>
-            <% end %>
-          </dd>
-          <dt>Comment</dt>
-          <dd><%= @review_prod.description %></dd>
-        </dl>
+        <%= render 'reviews' %>
       </div>
     </div>
-
   </article>
 
 </section>

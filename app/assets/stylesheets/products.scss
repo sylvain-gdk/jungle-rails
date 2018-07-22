@@ -72,7 +72,6 @@ main section.categories-show {
           opacity: 1.0;
         }
       }
-
     }
   }
 }
@@ -83,6 +82,11 @@ main section.products-show {
     img.main-img {
       max-width: 100%;
     }
+  }
+
+  .fa-star {
+    color: #ffdd00;
+    margin-bottom: 0.5em;
   }
 }
 
