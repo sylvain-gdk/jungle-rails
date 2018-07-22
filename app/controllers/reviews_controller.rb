@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_login
 
   def create
     @review = Review.new(review_params)

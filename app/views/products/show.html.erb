@@ -28,7 +28,9 @@
     </div>
     <hr>
     <h3>Reviews</h3>
-    <%= render 'form' %>
+    <% if current_user %>
+      <%= render 'form' %>
+    <% end %>
     <div class="row">
       <div class="col-sm-8">
         <%= render 'reviews' %>
