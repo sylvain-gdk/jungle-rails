@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_user
 
   def create
     @review = Review.new(review_params)
@@ -25,7 +26,15 @@ class ReviewsController < ApplicationController
       :user_id,
       :rating,
       :description
-      )
+    )
+  end
+
+  def require_user
+    if current_user
+      true
+    else
+      redirect_to :back
+    end
   end
 
 end
