@@ -1,4 +1,4 @@
-<% @product.reviews.each do |item| %>
+<% @product.reviews.order(created_at: :desc).each do |item| %>
   <% user = User.find_by_id(item.user_id) %>
   <dl class="dl-horizontal fas-star">
     <dd>
@@ -8,6 +8,11 @@
     </dd>
     <dt><%= user.first_name %></dt>
     <dd><%= item.description %></dd>
+    <dd><% if current_user == user %>
+      <button type="submit" class="btn btn-danger btn-sm rev-del-but">Delete</button>
+        <% end %>
+    </dd>
+
     <hr>
   </dl>
 <% end %>
