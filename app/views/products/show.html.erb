@@ -1,3 +1,4 @@
+
 <section class="products-show">
 
   <header class="page-header">
@@ -21,7 +22,23 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd><%= humanized_money_with_symbol @product.price %></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="row">
+      <% @review_prod = Review.find_by_product_id(@product.id) %>
+      <div class="col-sm-8">
+        <h3>Reviews</h3>
+        <dl class="dl-horizontal">
+          <dd>
+            <% @review_prod.rating.times do %>
+              <%= fa_icon "star" %>
+            <% end %>
+          </dd>
+          <dt>Comment</dt>
+          <dd><%= @review_prod.description %></dd>
         </dl>
       </div>
     </div>
