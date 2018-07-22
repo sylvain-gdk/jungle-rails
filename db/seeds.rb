@@ -21,6 +21,31 @@ end
 
 # Let's do this ...
 
+## USERS
+
+User.destroy_all
+
+user1 = User.create! ({
+  first_name: 'Bob',
+  last_name: 'Marley',
+  email: 'jungle',
+  password: 'book'
+})
+
+user2 = User.create! ({
+  first_name: 'Ariette',
+  last_name: 'Marley',
+  email: 'arriette@marley.com',
+  password: '1234'
+})
+
+user3 = User.create! ({
+  first_name: 'Bobette',
+  last_name: 'Marley',
+  email: 'bobette@marley.com',
+  password: '1234'
+})
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -130,6 +155,17 @@ cat3.products.create!({
   image: open_asset('furniture3.jpg'),
   quantity: 23,
   price: 2_483.75
+})
+
+## REVIEWS
+
+Review.destroy_all
+
+rev1 = Review.create! ({
+  user_id: 1,
+  product_id: 1,
+  description: Faker::Hipster.paragraph(4),
+  rating: 4
 })
 
 
