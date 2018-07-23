@@ -1,46 +1,47 @@
-<%= form_for @user do |f| %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-1">
+    <%= form_for @user do |f| %>
 
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@user.errors.count, "error") %> prohibited
-        this account from being created:
-      </h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <% if f.object.errors.any? %>
+        <div class="alert alert-danger">
+          <strong>The following errors prevented submiting:</strong>
+          <ul>
+            <% f.object.errors.full_messages.each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </p>
+      <div class="form-group">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </p>
+      <div class="form-group">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
+      <div class="form-group">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+      <div class="form-group">
+        <%= f.label :password %><br>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </p>
+      <div class="form-group">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+      <div>
+        <%= f.submit "Create User", class: 'btn btn-primary' %>
+      </div>
 
-<% end %>
+    <% end %>
+  </div>
+</div>

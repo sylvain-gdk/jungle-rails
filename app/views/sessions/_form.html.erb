@@ -1,31 +1,21 @@
-<%= form_for(:session, url: sessions_path) do |f| %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-1">
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@user.errors.count, "error") %> prohibited
-        from loging in:
-      </h2>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <div class="form-group">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
+      <div class="form-group">
+        <%= f.label :password %><br>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+      <div class="form-group">
+        <%= f.submit 'Login', class: 'btn btn-primary' %>
+      </div>
 
-  <p>
-    <%= f.submit 'Login' %>
-  </p>
-
-<% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 <% @product.reviews.order(created_at: :desc).each do |item| %>
   <% user = User.find_by_id(item.user_id) %>
-  <dl class="dl-horizontal">
+  <dl>
     <dd>
       <% item.rating.times do %>
         <%= fa_icon "star" %>
