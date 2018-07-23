@@ -1,9 +1,30 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+## About the project
 
+A mini e-commerce application built with Rails 4.2. The visitor can create an account and then post comments on products and buy items he puts in his cart. If the visitor comes back, he can log into his account. The user's password is encrypted and only an admin can have access to the admin tab, which controls certain features like adding categories and new products.
 
-## Setup
+## Dependencies
+
+* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* PostgreSQL 9.x
+* Stripe
+* sass-rails
+* uglifier
+* jquery-rails
+* turbolinks
+* jbuilder
+* sdoc
+* bcrypt
+* puma
+* bootstrap-sass
+* font-awsome-rails
+* money-rails
+* carrierwave
+* rmagick
+* faker
+
+## Getting Started
 
 1. Fork & Clone
 2. Run `bundle install` to install dependencies
@@ -21,8 +42,13 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
-## Dependencies
+## Screenshots
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
+#### Home page
+!["home.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/home.png)
+
+#### Example of a detail view
+!["detail.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/detail.png)
+
+#### Example of a review
+!["review.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/review.png)
