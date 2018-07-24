@@ -45,10 +45,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 ## Screenshots
 
 #### Home page
-!["home.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/home.png)
+!["main.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/main.png)
 
-#### Example of a detail view
-!["detail.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/detail.png)
+#### Detail view (logged in user can delete it's own review)
+!["review-delete.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/review-delete.png)
 
-#### Example of a review
-!["review.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/review.png)
+#### Product - Admin page
+!["product-admin.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/product-admin.png)

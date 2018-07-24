@@ -72,6 +72,10 @@ main section.categories-show {
           opacity: 1.0;
         }
       }
+
+      .fa-star {
+        color: #ffcf00;
+      }
     }
   }
 }
@@ -86,6 +90,7 @@ main section.products-show {
 
   .fa-star {
     margin-bottom: 0.5em;
+    color: #ffcf00;
   }
 
   .rev-del-btn {

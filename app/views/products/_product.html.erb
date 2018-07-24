@@ -8,12 +8,12 @@
   <p class="description">
     <%= product.description %>
   </p>
-  <% item = Review.find_by_product_id(product.id) %>
-  <% if item %>
-    <% item.rating.times do %>
+  <% stars = product.avg_rating(product.id) %>
+  <% if stars %>
+    <% stars.times do %>
       <%= fa_icon "star" %>
     <% end %>
-    <% (5 - item.rating).times do %>
+    <% (5 - stars).times do %>
       <%= fa_icon "star-o" %>
     <% end %>
   <% end %>
