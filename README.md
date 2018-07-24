@@ -50,5 +50,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 #### Detail view (logged in user can delete it's own review)
 !["review-delete.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/review-delete.png)
 
+#### Shopping cart
+!["cart.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/cart.png)
+
 #### Product - Admin page
 !["product-admin.png"](https://github.com/sylvain-gdk/jungle-rails/blob/master/docs/product-admin.png)
