@@ -29,21 +29,24 @@ user1 = User.create! ({
   first_name: 'Bob',
   last_name: 'Marley',
   email: 'jungle',
-  password: 'book'
+  password: 'book',
+  password_confirmation: 'book'
 })
 
 user2 = User.create! ({
   first_name: 'Ariette',
   last_name: 'Marley',
   email: 'arriette@marley.com',
-  password: '1234'
+  password: '1234',
+  password_confirmation: '1234'
 })
 
 user3 = User.create! ({
   first_name: 'Bobette',
   last_name: 'Marley',
   email: 'bobette@marley.com',
-  password: '1234'
+  password: '1234',
+  password_confirmation: '1234'
 })
 
 ## CATEGORIES
@@ -161,12 +164,18 @@ cat3.products.create!({
 
 Review.destroy_all
 
-rev1 = Review.create! ({
-  user_id: 1,
-  product_id: 1,
-  description: Faker::Hipster.paragraph(4),
-  rating: 4
-})
+rev = Review.new
+
+Product.all.each do |item|
+  5.times do
+    item.reviews.create!({
+      user_id: rand(1..3),
+      product_id: item.id,
+      description: Faker::Hipster.paragraph(4),
+      rating: rand(1..5)
+    })
+  end
+end
 
 
 puts "DONE!"

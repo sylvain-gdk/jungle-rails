@@ -3,8 +3,8 @@ class Product < ActiveRecord::Base
   has_many :reviews
 
   validates :name, presence: true
-  validates :price, presence: true
-  validates :quantity, presence: true, numericality: true
+  validates :price, presence: true, numericality: true
+  validates :quantity, presence: true, numericality: { only_integer: true }
   validates :category, presence: true
 
   monetize :price_cents, numericality: true
@@ -13,11 +13,11 @@ class Product < ActiveRecord::Base
   def avg_rating(product_id)
     avg = 0
     count = 0
-    Review.all.each do |item|
-      if item.product_id == product_id
+    reviews.each do |item|
+      # if item.product_id == product_id
         avg += item.rating
         count += 1
-      end
+      # end
     end
     if avg > 0
       avg / count
